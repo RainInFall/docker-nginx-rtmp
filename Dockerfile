@@ -1,6 +1,6 @@
-FROM node:6-slim
+FROM node
 ADD . /root
-RUN apt-get install -y build-essential \
+RUN apt-get update \
   && apt-get install -y libssl-dev \
   && cd /root/nginx \
   &&  ./configure --without-http_rewrite_module --without-http_gzip_module --add-module=../nginx-rtmp --prefix=/root \
